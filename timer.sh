@@ -8,9 +8,9 @@ then
     else
         stringa="Tempo completato"
     fi
-    echo "Comando lanciato:"; date; echo "Attendo $1 (h:m:s)."; sleep $totSec; ./parla.sh "$stringa"; echo $stringa
+    echo "Comando lanciato:"; date; echo "Attendo $1 (h:m:s)."; sleep $totSec; `dirname $0`/parla.sh "$stringa"; echo $stringa
 else
   echo "Non hai specificato bene il tempo! Usa:"
   echo "$0 h:m:s [\"frase da dire\"]"
-  ./parla.sh "dammi il tempo!"
+  `dirname $0`/parla.sh "dammi il tempo!"
 fi
